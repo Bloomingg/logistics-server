@@ -15,7 +15,7 @@ export class LoginController {
     let password = req.body.password
     const vericode = req.body.vericode
     let resData = {
-      code: 202,
+      code: 218,
       suc: false,
       msg: "",
       data: null
@@ -34,6 +34,12 @@ export class LoginController {
         password = this.toolsService.getMd5(password)
         // console.log(this.toosService.getMd5('123456'));
         const findResult = await this.userService.findUsers({ username: username }, 1)
+        const { status } = findResult[0]
+        if (status == 0) {
+          resData.msg = "该账号已被禁用！"
+          res.send(resData)
+          return false
+        }
         // console.log(findResult);
         if (findResult.length > 0 && findResult[0].status == 1) {
           if (findResult[0].password != password) {

@@ -72,6 +72,9 @@ export class UserController {
   async updateStatus(@Body() body, @Res() res) {
     try {
       let resData = {}
+      if (body.modify) {
+        body.password = this.toolsService.getMd5(body.password)
+      }
       const result = await this.userService.updateStatus(body._id, body)
       // console.log(result);
       if (result._id == body._id) {
