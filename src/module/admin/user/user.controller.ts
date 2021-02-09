@@ -6,7 +6,7 @@ import { UserService } from 'src/service/user/user.service';
 @Controller('user')
 export class UserController {
   constructor(private toolsService: ToolsService, private userService: UserService) { }
-
+  // 用户列表curd
   @Get('userList')
   async getUserList(@Query() query, @Res() res) {
     // console.log(query);
@@ -111,6 +111,7 @@ export class UserController {
     }
   }
 
+  // 角色列表curd
   @Post('addRole')
   async addRole(@Body() body, @Res() res) {
     const { title, description } = body
@@ -185,6 +186,7 @@ export class UserController {
     }
   }
 
+  // 权限列表curd
   @Post('addAccess')
   async addAccess(@Body() body, @Res() res) {
     const { module_name, description, type, sort } = body
@@ -249,6 +251,7 @@ export class UserController {
     }
   }
 
+  // 角色权限关联
   @Post('addRoleAccess')
   async addRoleAccess(@Body() body, @Res() res) {
     const { role_id, access_id } = body

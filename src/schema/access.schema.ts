@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
+// 权限信息
 export const AccessSchema = new mongoose.Schema({
   module_name: { type: String, required: true },      //模块名称
   // action_name: { type: String },      //操作名称

@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
+// 跟踪信息
 export const logisticsTrackSchema = new mongoose.Schema({
   frequencyId: {
     type: Schema.Types.ObjectId,

@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
+// 订单信息
 export const orderSchema = new mongoose.Schema({
   // orderNo: { type: String, required: true, unique: true },      //模块名称
   // action_name: { type: String },      //操作名称

@@ -5,7 +5,7 @@ import { ToolsService } from 'src/service/tools/tools.service';
 @Controller('order')
 export class OrderController {
   constructor(private toolsService: ToolsService, private orderService: OrderService) { }
-
+  // 订单信息curd
   @Get('getOrder')
   async getOrder(@Query() query, @Res() res) {
     let { orderId, page, size } = query

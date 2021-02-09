@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 
+// 路线信息
 export const routeSchema = new mongoose.Schema({
   startCity: {
     type: String,

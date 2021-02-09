@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
+// 账号信息schema
 export const adminSchema = new mongoose.Schema({
   username: {
     type: String,

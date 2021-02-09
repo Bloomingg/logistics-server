@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 
+// 班次信息
 export const frequencySchema = new mongoose.Schema({
   startCity: {
     type: String,

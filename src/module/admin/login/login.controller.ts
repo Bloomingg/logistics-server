@@ -5,9 +5,10 @@ import * as auth from 'basic-auth'
 
 @Controller('login')
 export class LoginController {
-  //注入ToolsService
+  //注入Service
   constructor(private toolsService: ToolsService, private userService: UserService) { }
 
+  // 登录验证
   @Post('doLogin')
   async doLogin(@Req() req, @Res() res) {
     const username = req.body.username
@@ -63,7 +64,7 @@ export class LoginController {
     }
     res.send(resData)
   }
-
+  // 获取验证码
   @Get('getVericode')
   getVericode(@Req() req, @Res() res) {
     const svgCaptcha = this.toolsService.captcha(4, 50, 80, 40, "#cc9966")
@@ -75,7 +76,7 @@ export class LoginController {
     res.type('svg')
     res.send(svgCaptcha.data)
   }
-
+  // 获取用户信息
   @Get('getInfo')
   async getInfo(@Req() req, @Res() res) {
     const authorization = req.headers.authorization
