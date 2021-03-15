@@ -5,7 +5,7 @@ import { AdminAuthMiddleware } from "src/middleware/admin-auth.middleware";
 
 @Module({
   imports: [AdminModule,
-    MongooseModule.forRoot('mongodb://localhost:27017/logistics', { useNewUrlParser: true, useFindAndModify: false })],
+    MongooseModule.forRoot('mongodb://localhost:27017/logistics', { useNewUrlParser: true, useFindAndModify: false,useCreateIndex:true })],
   controllers: [],
   providers: [],
 })

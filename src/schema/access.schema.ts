@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // 权限信息
 export const AccessSchema = new mongoose.Schema({
-  module_name: { type: String, required: true },      //模块名称
+  module_name: { type: String, required: true,unique:true },      //模块名称
   // action_name: { type: String },      //操作名称
   type: { type: Number, required: true },   //节点类型 :  1、表示模块   2、表示菜单     3、操作
   // url: { type: String, required: true },         //路由跳转地址

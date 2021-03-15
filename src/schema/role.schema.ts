@@ -3,7 +3,7 @@ const d = new Date();
 
 // 角色信息
 export const RoleSchema = new mongoose.Schema({
-  title: { type: String, required: true },
+  title: { type: String, required: true,unique:true },
   description: { type: String },
   status: { type: Number, default: 1 },
   add_time: {

@@ -12,7 +12,8 @@ export const frequencySchema = new mongoose.Schema({
   },
   transNo: {
     type: String,
-    required: true
+    required: true,
+    unique:true
   },
   treTime: {
     type: Number,

@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { LoginController } from './login/login.controller';
 import { TransportController } from './transport/transport.controller';
-import { FinanceController } from './finance/finance.controller';
 import { OrderController } from './order/order.controller';
 import { UserController } from './user/user.controller';
 import { ToolsService } from '../../service/tools/tools.service';
@@ -33,7 +32,7 @@ import { OrderService } from 'src/service/order/order.service';
       { name: 'Order', schema: orderSchema, collection: "order" },
     ])
   ],
-  controllers: [LoginController, TransportController, FinanceController, OrderController, UserController],
+  controllers: [LoginController, TransportController, OrderController, UserController],
   providers: [ToolsService, UserService, TransportService, OrderService]
 })
 export class AdminModule { }
