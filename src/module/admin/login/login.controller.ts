@@ -34,6 +34,11 @@ export class LoginController {
         password = this.toolsService.getMd5(password)
         // console.log(this.toosService.getMd5('123456'));
         const findResult = await this.userService.findUsers({ username: username }, 1)
+        if(findResult.length==0){
+          resData.msg = "账号不存在！"
+          res.send(resData)
+          return false
+        }
         const { status } = findResult[0]
         if (status == 0) {
           resData.msg = "该账号已被禁用！"

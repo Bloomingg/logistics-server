@@ -75,6 +75,8 @@ export class UserController {
       if (body.modify) {
         body.password = this.toolsService.getMd5(body.password)
       }
+      console.log(body);
+      
       const result = await this.userService.updateStatus(body._id, body)
       // console.log(result);
       if (result._id == body._id) {
